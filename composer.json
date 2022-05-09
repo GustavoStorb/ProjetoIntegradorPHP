@@ -1,0 +1,16 @@
+{
+    "description": "Senai Projeto MVC",
+    "authors": [
+        {
+            "name": "Gustavo Storb",
+            "email": "gustavo_storb@estudante.sesisenai.org.br"
+        }
+    ],
+    "autoload": {
+        "psr-4":{
+            "App\\": "app",
+            "Core\\": "core"
+        }
+    },
+    "require": {}
+}

@@ -1,0 +1,421 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #272833;
+}
+
+/*     C O L O R S     */
+
+.co2-white {
+  color: #fff;
+}
+
+.login-page {
+  margin-top: 8rem;
+}
+
+.br-10 {
+  border-radius: 10px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.dashboard-card {
+  font-size: 25px;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.actions-buttons-table {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 35px;
+}
+
+.dashboard-card button.action {
+  background-color: #26d965;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 10px 15px;
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  border: 0;
+  transition: background-color 0.3s;
+}
+
+.dashboard-card button.action:hover {
+  background-color: #259b4e;
+}
+
+.topnav {
+  overflow: hidden;
+  margin: 0 3.5rem;
+}
+
+.bg-red {
+  background-color: rgb(230, 41, 41) !important;
+}
+
+.topnav a:last-child:not(.bg-red) {
+  padding-right: 35px;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 5px 1.5em;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  color: #228b22;
+}
+
+.topnav a.active {
+  background-color: #228b22;
+  color: white;
+  width: 50px;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+.nav-items a {
+  animation-name: bloopAndFadeIn;
+  animation-duration: 500ms;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+}
+
+a:nth-child(1) {
+  animation-delay: 100ms;
+}
+
+a:nth-child(2) {
+  animation-delay: 200ms;
+}
+
+a:nth-child(3) {
+  animation-delay: 300ms;
+}
+
+a:nth-child(4) {
+  animation-delay: 400ms;
+}
+
+header nav {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav .nav-title {
+  font-size: 3vh;
+}
+
+section.hero {
+  display: flex;
+  align-items: center;
+  margin-top: 80px;
+  justify-content: space-around;
+  text-align: center;
+}
+
+hr {
+  border: 1px solid white;
+}
+
+section.hero img {
+  width: 450px;
+  pointer-events: none;
+}
+
+section.hero div:first-child {
+  max-width: 40%;
+}
+
+section.hero .title {
+  font-size: 4vh;
+  color: #0af05c;
+}
+
+section.hero .subtitle {
+  font-size: 2vh;
+}
+
+/* LOGIN PAGE */
+
+.comment {
+  float: left;
+  width: 100%;
+  height: auto;
+}
+
+.commenter {
+  float: left;
+}
+
+.comment-text-area {
+  float: left;
+  width: 100%;
+  height: auto;
+}
+
+.textinput {
+  float: left;
+  width: 248%;
+  min-height: 75px;
+  outline: none;
+  resize: none;
+  border: 1px solid grey;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #000000;
+}
+
+#titulocontact {
+  text-align: center !important;
+}
+
+.login-wrapper {
+  text-align: left;
+  width: 40%;
+  margin: 0 auto;
+}
+
+form.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__group {
+  margin-bottom: 25px;
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.form__field {
+  border: 0;
+  width: 100%;
+  border-bottom: 2px solid white;
+  outline: none;
+  font-size: 1.3rem;
+  color: #fff;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+.form__field::placeholder {
+  color: transparent;
+}
+
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 1.3rem;
+  cursor: text;
+  top: 20px;
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: white;
+}
+
+.form__field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #228b22;
+  font-weight: 700;
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #228b22, #228b22);
+  border-image-slice: 1;
+}
+
+.form__field:required,
+.form__field:invalid {
+  box-shadow: none;
+}
+
+form.login-form button {
+  background: #0af05c;
+  font-size: 1.2rem;
+  padding: 15px 0;
+  outline: none;
+  border: 0;
+  border-radius: 4px;
+  width: 75%;
+  margin: 0 auto;
+  transition: background 0.3s;
+  cursor: pointer;
+}
+
+form.login-form button:hover {
+  background: #148b3e;
+}
+
+.login-wrapper {
+  box-shadow: 5px 4px 22px 5px rgba(17, 21, 28, 0.68);
+  padding: 45px;
+  background: #11151c;
+  border-radius: 6px;
+}
+
+.name-input {
+  align-items: center;
+  display: block;
+  width: 100%;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #000000;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  outline: none;
+  border-radius: 0.25rem;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+textarea[type="text"] {
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.mr-16 {
+  margin-right: 46px;
+}
+
+.mt-80 {
+  margin-top: 80px;
+}
+
+/* ANIMATIONS */
+
+.fadeIn {
+  animation-name: bloopAndFadeIn;
+  animation-duration: 1s;
+}
+
+@keyframes bloopAndFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.6) translateY(-8px);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* RESPONSIVIDADE */
+
+@media screen and (max-width: 700px) {
+  .login-wrapper {
+    margin-top: 25px;
+    width: 70%;
+  }
+
+  nav {
+    flex-direction: column;
+  }
+
+  section.hero {
+    margin-top: 25px;
+  }
+
+  .topnav {
+    margin: 0;
+  }
+
+  .topnav a.icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    float: right;
+    display: block;
+    padding: 0;
+    margin: 28px 20px 0 0;
+  }
+
+  nav .nav-items {
+    display: flex;
+    align-items: center;
+  }
+
+  .topnav a {
+    display: none;
+  }
+
+  .topnav a:last-child:not(.bg-red) {
+    padding: 5px 15px;
+  }
+
+  .topnav a:is(.bg-red) {
+    margin-right: 0;
+  }
+
+  .topnav a.active {
+    width: auto;
+  }
+
+  .topnav.responsive {
+    position: relative;
+  }
+
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  section.hero {
+    flex-direction: column;
+  }
+
+  section.hero img {
+    width: 300px;
+  }
+
+  section.hero div:first-child {
+    max-width: 90%;
+  }
+  .textinput {
+    float: left;
+    width: 110%;
+  }
+}
