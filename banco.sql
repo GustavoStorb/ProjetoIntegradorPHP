@@ -11,3 +11,4 @@ CREATE TABLE IF NOT EXISTS usuario(
 
 INSERT INTO USUARIO values(null, 'Gustavo', 'gustavo@gmail.com', '$2y$10$VywIVAane04e4.YjMlhgTOL687XtubBfax50hVgqYbfh.GQi0zwHK', 'adm', 1);
 INSERT INTO USUARIO values(null, 'Teste', 'teste@gmail.com', '$2y$10$LjNt97W5VIu/fXDlGZJJc.i4HdHUeLwcnK/s0OoqvvIoQ3bn476Nu', 'user', 0);
+INSERT INTO USUARIO values(null, 'teste2', 'teste2@gmail.com', '$2y$10$LjNt97W5VIu/fXDlGZJJc.i4HdHUeLwcnK/s0OoqvvIoQ3bn476Nu', 'user', 0);
