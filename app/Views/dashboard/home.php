@@ -11,7 +11,7 @@ if(!defined('2022T2')){
     <section class="dashboard-card mt-80">
         <div>
             <h1>Perfil do usuário<h1>
-            <h5>ID: <?php echo $_SESSION['usuario_id'] ?></h5>
+            <h5>Id: <?php echo $_SESSION['usuario_id'] ?></h5>
             <h5>Nome: <?php echo $_SESSION['usuario_nome'] ?></h5>
             <h5>E-mail: <?php echo $_SESSION['usuario_email'] ?></h5>
             <h5>Cargo: <?php echo $_SESSION['perfil'] === 'adm' ? 'Administrador' : 'Usuário' ?></h5>
