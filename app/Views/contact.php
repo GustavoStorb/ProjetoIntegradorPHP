@@ -7,7 +7,7 @@ if(!defined('2022T2')){
 
 <div class="main-wrapper">
 <?php include('./app/Layouts/header.php'); ?>
-
+<title>Projeto Integrador - Contato</title>
       <section class="hero">
         <div class="login-wrapper fadeIn">
           <h2 class="co2-white" id="titulocontact">Nos contate</h2>
