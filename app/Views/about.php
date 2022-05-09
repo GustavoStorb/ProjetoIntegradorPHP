@@ -21,7 +21,7 @@ if(!defined('2022T2')){
           </p>
         </div>
         <div>
-          <img height="550px" width="900px" class="fadeIn" src="./public/about.png" />
+          <img width="750px" class="fadeIn br-10" src="./public/about.png" />
         </div>
       </section>
     </div>
