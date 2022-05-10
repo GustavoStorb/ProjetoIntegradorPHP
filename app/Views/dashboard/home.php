@@ -21,16 +21,18 @@ if(!defined('2022T2')){
             <div>
                 <h1 class="text-center">AÇÕES</h1>
                 <div class="actions-buttons-table">
-                    <button class="mr-16 action">Cadastrar Chamada</button>
-                    <button class="action">Consultar Chamada</button>
+                    <button class="mr-16 action">Cadastrar Chamado</button>
+                    <button class="action">Consultar Chamado</button>
                 </div>
                 <div class="actions-buttons-table">
                     <button class="action">Cadastrar Veiculo</button>
                     <button class="action">Consultar Veiculo</button>
                 </div>
                 <div class="actions-buttons-table">
-                    <button class="action">Cadastrar Usuario</button>
-                    <button class="action">Consultar Usuario</button>
+                    <a href="./cadastrar">
+                        <button class="action">Cadastrar Funcionário</button>
+                    </a>
+                    <button class="action">Consultar Funcionário</button>
                 </div>
             </div>
     </section>
