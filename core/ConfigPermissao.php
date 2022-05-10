@@ -20,7 +20,7 @@ class ConfigPermissao
 
     public function validarPermissao($urlController): void {
         $this->urlController = $urlController;
-        $this->pgPublica = ["login", "sair", "cadastrar", "index", "about", "contact"];
+        $this->pgPublica = ["login", "sair", "index", "about", "contact"];
         
         if(in_array($this->urlController, $this->pgPublica)){
             $this->resultado = $this->urlController;
@@ -30,7 +30,7 @@ class ConfigPermissao
     }
     
     private function pgRestrita(): void {
-        $this->pgRestrita = ["home"];
+        $this->pgRestrita = ["home", "cadastrar"];
         
         if(in_array($this->urlController, $this->pgRestrita)){
             $this->verificarLogin();
