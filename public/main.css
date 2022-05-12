@@ -76,7 +76,7 @@ input {
 }
 
 .topnav a:last-child:not(.bg-red) {
-  padding-right: 35px;
+  padding-right: 28px;
 }
 
 .topnav a {
@@ -84,7 +84,7 @@ input {
   display: block;
   color: #f2f2f2;
   text-align: center;
-  padding: 5px 1.5em;
+  padding: 5px 15px;
   text-decoration: none;
   font-size: 17px;
 }
@@ -198,7 +198,7 @@ select::-ms-expand {
 
 .btnCadastro {
   text-align: center;
-  margin-top: -75px;
+  margin: 35px 0;
   cursor: pointer;
 }
 
@@ -395,7 +395,13 @@ textarea[type="text"] {
 }
 
 fieldset {
-  margin: 0px 200px 100px;
+  width: 75%;
+  border: 2px #fff solid;
+  margin: 0 auto;
+}
+
+.actions-dashboard-buttons {
+  align-self: stretch;
 }
 
 .cadastro {
@@ -497,5 +503,22 @@ fieldset {
   .textinput {
     float: left;
     width: 110%;
+  }
+
+  .actions-buttons-table {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .actions-buttons-table button {
+    margin: 10px 0;
+  }
+
+  .dashboard-card {
+    flex-direction: column;
+  }
+
+  .actions-dashboard-buttons {
+    margin: 0 25px;
   }
 }

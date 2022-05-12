@@ -12,9 +12,9 @@ if (isset($this->dados['form'])) {
 }
 ?>
 <link rel="stylesheet" type="text/css" href="../public/main.css">
+<?php include('./app/Layouts/header.php'); ?>
 <div class="main-wrapper">
 <title>Projeto Integrador - Acesso</title>
-<?php include('./app/Layouts/header.php'); ?>
 
     <section class="login-page">
         <div class="login-wrapper fadeIn">

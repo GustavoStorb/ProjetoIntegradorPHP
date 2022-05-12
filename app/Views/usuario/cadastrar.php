@@ -10,7 +10,7 @@
                <legend>
                   <img src="../public/user.png" width="150">
                </legend>
-               <h2 class="cadastro">Cadastro de Funcionário</h2>
+               <h2 class="cadastro">Cadastro de Usuário</h2>
                <div class="form__group field">
                   <input
                      id="nome"
@@ -69,9 +69,9 @@
                </div>
             </fieldset>
             <div class="btnCadastro">
-                <a class="active bg-blue br-6ponto5" >CADASTRO</a>
-                  <a class="active bg-red br-6ponto5" href="/home">VOLTAR</a>
-               </div>
+               <a value="cadastrar" class="active bg-blue br-6ponto5" >CADASTRO</a>
+               <a class="active bg-red br-6ponto5" href="/home">VOLTAR</a>
+            </div>
          </form>
         
       </div>
