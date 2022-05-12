@@ -1,6 +1,7 @@
 <?php
-
 namespace Core;
+
+error_reporting(0);
 
 if(!defined('2022T2')){
     header("Location: /");
@@ -38,8 +39,14 @@ class ConfigController
         $configPermissao = new \Core\ConfigPermissao();
         $configPermissao->validarPermissao($this->urlController);
         $urlController = ucwords($this->urlController);
-        $classe = "\\App\\Controllers\\" . $urlController;
         
+        if($this->urlController == 'cadastrar-usuario'){
+            $classe = "\\App\\Controllers\\Cadastrar";
+            $classeCarregar = new $classe; 
+            return $_GET['nome'] ? $classeCarregar->gravarUsuario() : $classeCarregar->index();
+        }
+
+        $classe = "\\App\\Controllers\\" . $urlController;
         $classeCarregar = new $classe;
         $classeCarregar->index();
     }

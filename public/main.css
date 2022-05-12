@@ -23,7 +23,7 @@ input {
   border-radius: 10px;
 }
 
-.br-6ponto5 {
+.br-6 {
   border-radius: 6.5px;
 }
 
@@ -77,6 +77,12 @@ input {
 
 .topnav a:last-child:not(.bg-red) {
   padding-right: 28px;
+}
+
+.btn-cadastro {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
 }
 
 .topnav a {

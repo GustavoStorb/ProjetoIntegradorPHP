@@ -17,7 +17,7 @@ class Conexao
     public $port = 3306;
     public $connect;
     
-    protected function connect() {
+    public function connect() {
         try {
             $this->connect = new \PDO($this->sgbd . ':host=' 
             . $this->host . ';port=' . $this->port . ';dbname=' . $this->database, $this->user, $this->pass);

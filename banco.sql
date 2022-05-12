@@ -3,10 +3,10 @@ DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE IF NOT EXISTS usuario(
 	id int primary key auto_increment,
 	nome varchar(220) not null,
-	email varchar(220) not null,
+	email varchar(220) not null unique,
 	senha char(220) not null,
 	perfil enum('adm', 'user') not null,
-	licensed bit not null
+	licensed boolean not null
 );
 
 INSERT INTO USUARIO values(null, 'Gustavo', 'gustavo@gmail.com', '$2y$10$VywIVAane04e4.YjMlhgTOL687XtubBfax50hVgqYbfh.GQi0zwHK', 'adm', 1);

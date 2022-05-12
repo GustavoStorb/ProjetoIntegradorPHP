@@ -5,7 +5,7 @@
    <title>Projeto Integrador - Cadastro</title>
    <body>
       <div class="mt-30">
-         <form class="cadastro-form">
+         <form class="cadastro-form" action="/cadastrar-usuario">
             <fieldset>
                <legend>
                   <img src="../public/user.png" width="150">
@@ -20,7 +20,6 @@
                      name="nome" 
                      autocomplete="off" 
                      value=""
-                     id="nome" 
                      required />
                   <label for="nome" class="form__label blue">Nome</label>
                </div>
@@ -32,8 +31,7 @@
                      placeholder="email"
                      name="email" 
                      autocomplete="off" 
-                     value=""
-                     id="email" 
+                     value="" 
                      required />
                   <label for="email" class="form__label blue">E-mail</label>
                </div>
@@ -45,14 +43,13 @@
                      placeholder="email"
                      name="senha" 
                      autocomplete="off" 
-                     value=""
-                     id="senha" 
+                     value="" 
                      required />
                   <label for="senha" class="form__label blue">Senha</label>
                </div>
                <label style="font-size: 1.3rem;" class="blue">Cargo</label>
                <div class="input-field">
-                  <select name="tipo" required>
+                  <select name="perfil" required>
                      <option value="" disabled selected>Escolher</option>
                      <option value="adm">Administrador</option>
                      <option value="user">Funcionário</option>
@@ -68,9 +65,13 @@
                   </select>
                </div>
             </fieldset>
-            <div class="btnCadastro">
-               <a value="cadastrar" class="active bg-blue br-6ponto5" >CADASTRO</a>
-               <a class="active bg-red br-6ponto5" href="/home">VOLTAR</a>
+            <div class="btnCadastro">   
+               <button class="btn-cadastro" type="submit">
+                  <a value="cadastrar" type="submit" class="active bg-blue br-6">CADASTRO</a>
+               </button>  
+               <button onclick="location.href='/home'" class="btn-cadastro">
+               <a class="active bg-red br-6">VOLTAR</a>
+               </button>  
             </div>
          </form>
         

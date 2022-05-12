@@ -4,8 +4,6 @@ if (!defined('2022T2')) {
     header("Location: /");
     die();
 }
-//Criptografar a senha
-//echo password_hash(123456, PASSWORD_DEFAULT);
 
 if (isset($this->dados['form'])) {
     $valorForm = $this->dados['form'];

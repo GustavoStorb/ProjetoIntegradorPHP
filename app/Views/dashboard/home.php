@@ -11,10 +11,9 @@ if(!defined('2022T2')){
 <section class="dashboard-card mt-80">
    <div>
       <h1>
-      Perfil do usuário
+      Bem vindo ao sistema: <?php echo $_SESSION['usuario_nome'] ?>
       <h1>
       <h5>ID: <?php echo $_SESSION['usuario_id'] ?></h5>
-      <h5>Nome: <?php echo $_SESSION['usuario_nome'] ?></h5>
       <h5>E-mail: <?php echo $_SESSION['usuario_email'] ?></h5>
       <h5>Cargo: <?php echo $_SESSION['perfil'] === 'adm' ? 'Administrador' : 'Funcionário' ?></h5>
       <h5>Habilitado: <?php echo $_SESSION['licensed'] === 1 ? 'Sim' : 'Não' ?></h5>
@@ -30,7 +29,7 @@ if(!defined('2022T2')){
          <button class="action">Consultar Veiculo</button>
       </div>
       <div class="actions-buttons-table">
-         <a href="./cadastrar">
+         <a href="./cadastrar-usuario">
          <button class="action">Cadastrar Usuário</button>
          </a>
          <button class="action">Consultar Usuário</button>
