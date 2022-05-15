@@ -46,6 +46,12 @@ class ConfigController
             return $_GET['nome'] ? $classeCarregar->gravarUsuario() : $classeCarregar->index();
         }
 
+        if($this->urlController == 'consultar-usuario'){
+            $classe = "\\App\\Controllers\\Consultar";
+            $classeCarregar = new $classe; 
+            return $_GET['nome'] ? $classeCarregar->consultarUsuario() : $classeCarregar->index();
+        }
+
         $classe = "\\App\\Controllers\\" . $urlController;
         $classeCarregar = new $classe;
         $classeCarregar->index();

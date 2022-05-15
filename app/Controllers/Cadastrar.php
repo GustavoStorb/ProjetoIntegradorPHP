@@ -32,7 +32,7 @@ class Cadastrar
 
             $sql = 'INSERT INTO usuario (nome, email, senha, perfil, licensed) VALUES(?, ?, ?, ?, ?)';
             $stmt = $connect->prepare($sql);
-            $stmt->execute([$nome, $email, password_hash($senha, PASSWORD_DEFAULT), $perfil, $nome]);
+            $stmt->execute([$nome, $email, password_hash($senha, PASSWORD_DEFAULT), $perfil, $licensed]);
             $carregarView = new \Core\ConfigView("Views/usuario/cadastrar", $this->dados);
             $carregarView->renderizar();
             echo "<script>alert(`Usuário $nome cadastrado com sucesso!`)</script>";

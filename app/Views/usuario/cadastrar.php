@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-   <title>Projeto Integrador - Cadastro</title>
+   <title>Projeto Integrador - Cadastro de Usuário</title>
    <body>
       <div class="mt-30">
          <form class="cadastro-form" action="/cadastrar-usuario">

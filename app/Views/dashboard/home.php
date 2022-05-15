@@ -32,7 +32,9 @@ if(!defined('2022T2')){
          <a href="./cadastrar-usuario">
          <button class="action">Cadastrar Usuário</button>
          </a>
+         <a href="./consultar-usuario">
          <button class="action">Consultar Usuário</button>
+         </a>
       </div>
    </div>
 </section>

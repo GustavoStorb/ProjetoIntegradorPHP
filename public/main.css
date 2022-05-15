@@ -208,6 +208,12 @@ select::-ms-expand {
   cursor: pointer;
 }
 
+.right {
+  text-align: right !important;
+  margin: -28px 165px !important;
+  cursor: pointer !important;
+}
+
 .btnCadastro a {
   text-decoration: none;
   color: white;
@@ -400,6 +406,10 @@ textarea[type="text"] {
   margin-top: 80px;
 }
 
+.margin-160 {
+  margin: 0px 250px;
+}
+
 fieldset {
   width: 75%;
   border: 2px #fff solid;
@@ -526,5 +536,11 @@ fieldset {
 
   .actions-dashboard-buttons {
     margin: 0 25px;
+  }
+  .margin-160 {
+    margin: 20px 65px;
+  }
+  .btnCadastro {
+    margin: 0px;
   }
 }
