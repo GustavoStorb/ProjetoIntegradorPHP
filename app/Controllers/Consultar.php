@@ -26,7 +26,7 @@ class Consultar
             $databaseClass->connect();
             $connect = $databaseClass->connect;
 
-            $sql = "SELECT * FROM usuario WHERE nome LIKE '%$nome%'";
+            $sql = "SELECT * FROM usuario WHERE nome LIKE '$nome%' ORDER BY nome";
 
             $stmt = $connect->prepare($sql);
             $stmt->execute(); 
@@ -34,11 +34,18 @@ class Consultar
             
             $carregarView = new \Core\ConfigView("Views/usuario/consultar", $this->dados);
             $carregarView->renderizar();
-            echo $user[1];
+
+            $cod = $user[0];
+            $nome = $user[1];
+            $email = $user[2];
+            $tipo = $user[3];
+            $licensed = $user[4];
+
+            echo $nome;
         } catch (\PDOException $e){
             $carregarView = new \Core\ConfigView("Views/usuario/consultar", $this->dados);
             $carregarView->renderizar();
-            echo $e;
+            echo "<script>alert(`Erro ao consultar usuário!`)</script>";
         }
 
      }

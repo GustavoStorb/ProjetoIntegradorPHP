@@ -17,14 +17,15 @@
                      autocomplete="off" 
                      value=""
                      style="width: 65%;"
+                     required
                      />
                   <label for="nome" class="form__label blue margin-160">Digite para pesquisar</label>
                   <div class="btnCadastro">   
                <button class="btn-cadastro " type="submit">
                   <a value="consultar" type="submit" class="active bg-blue br-6">CONSULTAR</a>
                </button>  
-               <button onclick="location.href='/home'" class="btn-cadastro">
-               <a class="active bg-red br-6">VOLTAR</a>
+               <button class="btn-cadastro">
+               <a href="/home" class="active bg-red br-6">VOLTAR</a>
                </button>  
             </div>
                </div>
