@@ -7,17 +7,32 @@ if(!defined('2022T2')){
     die("");
 }
 
-class Consultar
+class Usuario
 {
     
     private $dados;
     
     public function index() {
-       $carregarView = new \Core\ConfigView("Views/usuario/consultar", $this->dados);
+       $carregarView = new \Core\ConfigView("Views/usuario/cadastrar", $this->dados);
        $carregarView->renderizar();
     }
 
-    public function consultarUsuario() {
+    public function add() {
+        $this->dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+        if(!empty($this->dados['nome'])){
+            $addUser = new \App\Models\Usuario();
+            $retorno = $addUser->add($this->dados);
+            if ($retorno){
+                $urlDestino = URL . "home/index";
+                header("Location: $urlDestino");
+            }
+        } else {
+            $carregarView = new \Core\ConfigView("Views/usuario/cadastrar", $this->dados);
+            $carregarView->renderizar();
+        }
+     }
+
+     public function find() {
         try {
             $nome = $_GET["nome"];
 

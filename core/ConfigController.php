@@ -23,7 +23,11 @@ class ConfigController
             
             if ((isset($this->urlConjunto[0]))) {
                 $this->urlController = $this->urlConjunto[0];
-                $this->urlMetodo = "index";
+                if(isset($this->urlConjunto[1])){
+                    $this->urlMetodo = $this->urlConjunto[1];
+                }else{
+                    $this->urlMetodo = "index";
+                }
             } else {
                 $this->urlController = "erro";
                 $this->urlMetodo = "index";
@@ -39,22 +43,11 @@ class ConfigController
         $configPermissao = new \Core\ConfigPermissao();
         $configPermissao->validarPermissao($this->urlController);
         $urlController = ucwords($this->urlController);
-        
-        if($this->urlController == 'cadastrar-usuario'){
-            $classe = "\\App\\Controllers\\Cadastrar";
-            $classeCarregar = new $classe; 
-            return $_GET['nome'] ? $classeCarregar->gravarUsuario() : $classeCarregar->index();
-        }
-
-        if($this->urlController == 'consultar-usuario'){
-            $classe = "\\App\\Controllers\\Consultar";
-            $classeCarregar = new $classe; 
-            return $_GET['nome'] ? $classeCarregar->consultarUsuario() : $classeCarregar->index();
-        }
 
         $classe = "\\App\\Controllers\\" . $urlController;
         $classeCarregar = new $classe;
-        $classeCarregar->index();
+        $method = $this->urlMetodo;
+        $classeCarregar->$method();
     }
     
     private function config() {

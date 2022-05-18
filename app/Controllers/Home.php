@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 if(!defined('2022T2')){
     header("Location: /");
-    die("");
+    die("Erro ao acessar");
 }
 
 class Home

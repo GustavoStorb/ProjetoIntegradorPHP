@@ -29,10 +29,10 @@ if(!defined('2022T2')){
          <button class="action">Consultar Veiculo</button>
       </div>
       <div class="actions-buttons-table">
-         <a href="./cadastrar-usuario">
+         <a href="/usuario/add">
          <button class="action">Cadastrar Usuário</button>
          </a>
-         <a href="./consultar-usuario">
+         <a href="/usuario/find">
          <button class="action">Consultar Usuário</button>
          </a>
       </div>

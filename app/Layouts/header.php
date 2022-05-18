@@ -20,7 +20,7 @@ if(!defined('2022T2')){
             <?php if(!isset($_SESSION['perfil'])){ ?>
                 <a class="active br-10" href="login">Acesso</a>
             <?php }else{ ?>
-                <a class="active bg-red br-10" href="sair">Sair</a>
+                <a class="active bg-red br-10" href="/sair/index">Sair</a>
             <?php } ?>
         </div>
         </nav>

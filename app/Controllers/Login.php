@@ -20,7 +20,7 @@ class Login
             $visualizarLogin = new \App\Models\LoginModel();
             $visualizarLogin->login($this->dados);
             if($visualizarLogin->getResultado()){
-                $urlDestino = URL . "home";
+                $urlDestino = URL . "home/index";
                 header("Location: $urlDestino");
             }else{
                 $this->dados['form'] = $this->dados;

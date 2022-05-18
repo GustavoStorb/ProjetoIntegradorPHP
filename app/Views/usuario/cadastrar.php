@@ -5,7 +5,7 @@
    <title>Projeto Integrador - Cadastro de Usuário</title>
    <body>
       <div class="mt-30">
-         <form class="cadastro-form" action="/cadastrar-usuario">
+         <form class="cadastro-form" method="POST">
             <fieldset>
                <legend>
                   <img src="../public/user.png" width="150">
@@ -66,10 +66,10 @@
                </div>
             </fieldset>
             <div class="btnCadastro">   
-               <button class="btn-cadastro" type="submit">
+               <button name="SendCadastro" class="btn-cadastro" type="submit">
                   <a value="cadastrar" type="submit" class="active bg-blue br-6">CADASTRO</a>
                </button>  
-               <button onclick="location.href='/home'" class="btn-cadastro">
+               <button onclick="location.href='/home/index'" class="btn-cadastro">
                <a class="active bg-red br-6">VOLTAR</a>
                </button>  
             </div>
