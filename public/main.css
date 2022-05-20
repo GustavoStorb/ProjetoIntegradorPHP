@@ -510,6 +510,9 @@ fieldset {
 /* RESPONSIVIDADE */
 
 @media screen and (max-width: 700px) {
+  .btn-cadastro.bg-red {
+    margin-top: 10px;
+  }
   .find-user-form {
     flex-direction: column;
     margin-left: 0;

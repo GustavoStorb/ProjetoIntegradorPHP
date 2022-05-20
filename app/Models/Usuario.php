@@ -45,8 +45,8 @@ class Usuario extends Conexao
             $stmt->execute();
             $result = $stmt->fetchAll();
             return $result;
-        } catch (\PDOException $e){
-            echo "erro ao consultar";
+        } catch (\Exception $e){
+            echo $e;
         }
      }
 }
