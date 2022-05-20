@@ -5,15 +5,14 @@ if(!defined('2022T2')){
     die("");
 }
 ?>
-
 <header>
     <div class="topnav" id="myTopnav">
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
         </a>
         <nav>
-        <h1 class="nav-title co2-white fadeIn">Projeto Integrador</h1>
-        <div class="nav-items">
+        <h1 class="nav-title co2-white">Projeto Integrador</h1> <!-- // fadeIn class -->
+        <div class="nav-items"> <!-- // with-animation class -->
             <a href="/">Inicio</a>
             <a class="" href="about">Sobre</a>
             <a class="" href="contact">Contato</a>

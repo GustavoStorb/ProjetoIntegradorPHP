@@ -17,6 +17,7 @@ if (isset($this->dados['form'])) {
     <section class="login-page">
         <div class="login-wrapper fadeIn">
             <?php
+                
                 if (isset($_SESSION['msg'])){
                     echo $_SESSION['msg'];
                     unset($_SESSION['msg']);

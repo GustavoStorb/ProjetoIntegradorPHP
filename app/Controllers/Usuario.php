@@ -25,6 +25,8 @@ class Usuario
             if ($retorno){
                 $urlDestino = URL . "home/index";
                 header("Location: $urlDestino");
+            } else {
+                echo("<script>alert('Erro ao cadastrar usuário!')</script>");
             }
         } else {
             $carregarView = new \Core\ConfigView("Views/usuario/cadastrar", $this->dados);
@@ -33,24 +35,15 @@ class Usuario
      }
 
      public function find() {
-        try {
-            $nome = $_GET["nome"];
+        $this->dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+         if(!empty($this->dados['nome'])){
+            $userModel = new \App\Models\Usuario();
+            $result = $userModel->find($this->dados);
 
-            $database = "\\App\\Models\\Conexao";
-            $databaseClass = new $database;
-            $databaseClass->connect();
-            $connect = $databaseClass->connect;
-
-            $sql = "SELECT * FROM usuario WHERE nome LIKE '$nome%' ORDER BY nome";
-
-            $stmt = $connect->prepare($sql);
-            $stmt->execute(); 
-            $result = $stmt->fetchAll();
-            
-            $carregarView = new \Core\ConfigView("Views/usuario/consultar", $this->dados);
-            $carregarView->renderizar();
-
-            ?> 
+            if($result){
+                $carregarView = new \Core\ConfigView("Views/usuario/consultar", $this->dados);
+                $carregarView->renderizar();
+                ?>
             <html>
             <table class="tabela">
                     <tr>
@@ -60,15 +53,12 @@ class Usuario
                         <th>Cargo</th>
                         <th>Habilitado</th>
                         <th>Ações</th>
-
                         <?php 
                         if($_SESSION['perfil'] == 'adm'){
                         ?>
                         <?php } ?>
-
                     <?php foreach($result as &$valor): ?>
                     </tr>
-
                     <tr>
                     <td>
                         <?php echo $valor[0];?>
@@ -98,22 +88,23 @@ class Usuario
                                 echo "Não";
                             }
                         ?>
-
                     </td>
                     <td>
-                        <button><i style="font-size:18px" class="fa fa-pencil"></i>
-                        <button><i style="font-size:18px" class="fa fa-trash"></i>
+                        <button class="table-action-button bg-blue"><i style="font-size:18px" class="fa fa-pencil"></i>
+                        <button class="table-action-button bg-red"><i style="font-size:18px" class="fa fa-trash"></i>
                     </td>
                     <?php endforeach; ?>
                         </tr>
-
             </html>
             <?php
-        } catch (\PDOException $e){
+            }else{
+                $carregarView = new \Core\ConfigView("Views/usuario/consultar", $this->dados);
+                $carregarView->renderizar();
+                echo("<script>alert('Erro ao buscar esse usuário!')</script>");
+            }
+        } else {
             $carregarView = new \Core\ConfigView("Views/usuario/consultar", $this->dados);
             $carregarView->renderizar();
-            echo "<script>alert(`Erro ao consultar usuário!`)</script>";
         }
-
      }
 }

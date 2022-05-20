@@ -1,7 +1,10 @@
 body {
   margin: 0;
-  font-family: "Poppins", sans-serif;
   background-color: #272833;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
 }
 
 textarea,
@@ -109,7 +112,7 @@ input {
   display: none;
 }
 
-.nav-items a {
+.nav-items.with-animation a {
   animation-name: bloopAndFadeIn;
   animation-duration: 500ms;
   animation-fill-mode: both;
@@ -328,6 +331,11 @@ form.login-form {
   border-image-slice: 1;
 }
 
+.find-user-form {
+  margin-left: -7.8rem;
+  justify-content: center;
+}
+
 .cadastro-form .form__field:focus {
   border-image: linear-gradient(to right, #249cf2, #249cf2);
   border-image-slice: 1;
@@ -448,9 +456,64 @@ fieldset {
   }
 }
 
+.btn-cadastro {
+  padding: 10px;
+  color: white;
+  font-size: 18px;
+}
+
+.btn-cadastro.bg-red {
+  margin-left: 15px;
+}
+
+.find-user-form {
+  display: flex;
+  align-items: center;
+}
+
+.find-user-form .btnCadastro {
+  margin-left: 15px;
+}
+
+.tabela td,
+.tabela tr {
+  text-align: center;
+  font-weight: 700;
+  font-size: 16px;
+  color: white;
+  /* padding: 1rem 1.7rem; */
+}
+
+.tabela {
+  width: 70%;
+}
+
+.tabela td {
+  padding-top: 1.4rem;
+}
+
+.table-action-button {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: 0;
+}
+
+.table-action-button i {
+  font-size: 16px;
+}
+
+.table-action-button:not(:first-child) {
+  margin-left: 10px;
+}
+
 /* RESPONSIVIDADE */
 
 @media screen and (max-width: 700px) {
+  .find-user-form {
+    flex-direction: column;
+    margin-left: 0;
+  }
+
   .login-wrapper {
     margin-top: 25px;
     width: 70%;

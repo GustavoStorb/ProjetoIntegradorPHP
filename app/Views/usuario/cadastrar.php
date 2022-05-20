@@ -66,11 +66,11 @@
                </div>
             </fieldset>
             <div class="btnCadastro">   
-               <button name="SendCadastro" class="btn-cadastro" type="submit">
-                  <a value="cadastrar" type="submit" class="active bg-blue br-6">CADASTRO</a>
+               <button name="SendCadastro" class="btn-cadastro active bg-blue br-6" type="submit">
+                  CADASTRAR
                </button>  
-               <button onclick="location.href='/home/index'" class="btn-cadastro">
-               <a class="active bg-red br-6">VOLTAR</a>
+               <button onclick="location.href='/home/index'" class="btn-cadastro active bg-red br-6">
+                  VOLTAR
                </button>  
             </div>
          </form>
