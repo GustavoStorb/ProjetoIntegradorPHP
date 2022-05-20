@@ -496,6 +496,7 @@ fieldset {
   padding: 8px 14px;
   border-radius: 6px;
   border: 0;
+  cursor: pointer;
 }
 
 .table-action-button i {
