@@ -7,9 +7,17 @@ if(!defined('2022T2')){
     die("");
 }
 
+if (isset($_GET['id']) && isset($_GET['nome'])){
+    $deleteUser = new \App\Models\Usuario();
+    $retorno = $deleteUser->delete($_GET['id'], $_GET['nome']);
+    echo("<script>alert('".$retorno."');
+    window.location.href='/usuario/find';
+    </script>");
+    
+}
+
 class Usuario
 {
-    
     private $dados;
     
     public function index() {
@@ -45,6 +53,13 @@ class Usuario
                 $carregarView->renderizar();
                 ?>
             <html>
+            <script>
+                function deleteXD(id, nome){
+                    if (confirm("Você realmente gostaria de excluir este usuario?")){
+                        document.location = '/usuario/find?id=' + id + '&nome=' + nome;
+                    }
+                }
+            </script>
             <table class="tabela">
                     <tr>
                         <th>#</th>   
@@ -91,7 +106,7 @@ class Usuario
                     </td>
                     <td>
                         <button class="table-action-button bg-blue"><i style="font-size:18px" class="fa fa-pencil"></i>
-                        <button class="table-action-button bg-red"><i style="font-size:18px" class="fa fa-trash"></i>
+                        <button onclick="deleteXD(<?php echo $valor[0];?>, '<?php echo $valor[1];?>');" class="table-action-button bg-red"><i style="font-size:18px" class="fa fa-trash"></i>
                     </td>
                     <?php endforeach; ?>
                         </tr>

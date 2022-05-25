@@ -36,6 +36,19 @@ class Usuario extends Conexao
         }
      }
 
+     public function delete($id, $nome){
+         try {
+            $this->conn = $this->connect();
+            $sql = "DELETE FROM usuario WHERE id = $id";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute();
+            $msg = 'Você excluiu o usuario: '.$nome.' com sucesso!';
+            return $msg;
+        
+         } catch (\Exception $e) {
+         }
+     }
+
      public function find(array $dados = null){
         try {
             $this->dados = $dados;
