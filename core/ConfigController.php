@@ -23,11 +23,14 @@ class ConfigController
             
             if ((isset($this->urlConjunto[0]))) {
                 $this->urlController = $this->urlConjunto[0];
-                if(isset($this->urlConjunto[1])){
-                    $this->urlMetodo = $this->urlConjunto[1];
-                }else{
-                    $this->urlMetodo = "index";
-                }
+            if(isset($this->urlConjunto[1])){
+                $this->urlMetodo = $this->urlConjunto[1];
+            if(isset($this->urlConjunto[2])){
+                $this->urlMetodo = $this->urlConjunto[2];
+            }
+            }else{
+                $this->urlMetodo = "index";
+            }
             } else {
                 $this->urlController = "erro";
                 $this->urlMetodo = "index";

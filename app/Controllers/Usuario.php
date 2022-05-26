@@ -7,15 +7,6 @@ if(!defined('2022T2')){
     die("");
 }
 
-if (isset($_GET['id']) && isset($_GET['nome'])){
-    $deleteUser = new \App\Models\Usuario();
-    $retorno = $deleteUser->delete($_GET['id'], $_GET['nome']);
-    echo("<script>alert('".$retorno."');
-    window.location.href='/usuario/find';
-    </script>");
-    
-}
-
 class Usuario
 {
     private $dados;
@@ -42,6 +33,16 @@ class Usuario
         }
      }
 
+     public function delete(){
+        if (isset($_GET['id']) && isset($_GET['nome'])){
+            $deleteUser = new \App\Models\Usuario();
+            $retorno = $deleteUser->delete($_GET['id'], $_GET['nome']);
+            echo("<script>alert('".$retorno."');
+            window.location.href='/usuario/find';
+            </script>");
+        }
+    }
+
      public function find() {
         $this->dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
          if(!empty($this->dados['nome'])){
@@ -54,9 +55,9 @@ class Usuario
                 ?>
             <html>
             <script>
-                function deleteXD(id, nome){
+                function deleteUser(id, nome){
                     if (confirm("Você realmente gostaria de excluir este usuario?")){
-                        document.location = '/usuario/find?id=' + id + '&nome=' + nome;
+                        document.location = '/usuario/find/delete?id=' + id + '&nome=' + nome;
                     }
                 }
             </script>
@@ -106,7 +107,7 @@ class Usuario
                     </td>
                     <td>
                         <button class="table-action-button bg-blue"><i style="font-size:18px" class="fa fa-pencil"></i>
-                        <button onclick="deleteXD(<?php echo $valor[0];?>, '<?php echo $valor[1];?>');" class="table-action-button bg-red"><i style="font-size:18px" class="fa fa-trash"></i>
+                        <button onclick="deleteUser(<?php echo $valor[0];?>, '<?php echo $valor[1];?>');" class="table-action-button bg-red"><i style="font-size:18px" class="fa fa-trash"></i>
                     </td>
                     <?php endforeach; ?>
                         </tr>
