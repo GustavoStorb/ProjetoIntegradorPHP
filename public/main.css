@@ -481,7 +481,7 @@ fieldset {
   font-weight: 700;
   font-size: 16px;
   color: white;
-  /* padding: 1rem 1.7rem; */
+  padding: 1rem 1.7rem;
 }
 
 .tabela {
@@ -505,6 +505,11 @@ fieldset {
 
 .table-action-button:not(:first-child) {
   margin-left: 10px;
+}
+.btnFind {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* RESPONSIVIDADE */
@@ -613,5 +618,8 @@ fieldset {
   }
   .btnCadastro {
     margin: 0px;
+  }
+  .form__label {
+    top: 25px !important;
   }
 }

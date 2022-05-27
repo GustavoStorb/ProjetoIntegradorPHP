@@ -20,7 +20,7 @@
                      style="width: 65%; font-weight: 500;"
                      required
                      />
-                  <label for="nome" class="form__label blue margin-160" style="top: 37px;">Digite para pesquisar</label>
+                  <label for="nome" class="form__label blue margin-160" style="top: 35px;">Digite para pesquisar</label>
                </div>
                <div class="btnCadastro">   
                   <button class="active bg-blue br-6 btn-cadastro" type="submit">

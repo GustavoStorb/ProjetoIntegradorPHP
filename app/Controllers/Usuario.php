@@ -43,6 +43,17 @@ class Usuario
         }
     }
 
+    public function edit(){
+        if (isset($_GET['id'])){
+            $editUser = new \App\Models\Usuario();
+            $retorno = $editUser->edit($_GET['id']);
+            $this->retorno = $retorno;
+            var_dump($this->retorno);
+            $carregarView = new \Core\ConfigView("Views/usuario/editar", $this->retorno);
+            $carregarView->renderizar();
+        }
+    }
+
      public function find() {
         $this->dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
          if(!empty($this->dados['nome'])){
@@ -60,7 +71,11 @@ class Usuario
                         document.location = '/usuario/find/delete?id=' + id + '&nome=' + nome;
                     }
                 }
+                function editUser(id){
+                        document.location = '/usuario/find/edit?id=' + id;
+                }
             </script>
+            <div style="overflow-x:auto;" >
             <table class="tabela">
                     <tr>
                         <th>#</th>   
@@ -106,11 +121,14 @@ class Usuario
                         ?>
                     </td>
                     <td>
-                        <button class="table-action-button bg-blue"><i style="font-size:18px" class="fa fa-pencil"></i>
-                        <button onclick="deleteUser(<?php echo $valor[0];?>, '<?php echo $valor[1];?>');" class="table-action-button bg-red"><i style="font-size:18px" class="fa fa-trash"></i>
+                        <div class="btnFind" >
+                        <button onclick="editUser(<?php echo $valor[0];?>);" class="table-action-button bg-blue "><i style="color: white; font-size: 18px;" class="fa fa-pencil"></i>
+                        <button onclick="deleteUser(<?php echo $valor[0];?>, '<?php echo $valor[1];?>');" class="table-action-button bg-red"><i style="color: white; font-size:18px;" class="fa fa-trash"></i>
+                        </div>
                     </td>
                     <?php endforeach; ?>
                         </tr>
+                    </div>
             </html>
             <?php
             }else{

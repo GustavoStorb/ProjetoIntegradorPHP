@@ -13,7 +13,6 @@ class Usuario extends Conexao
 {
 
     private $dados;
-    private $resultadoBd;
     private $conn;
 
     public function add(array $dados = null) {
@@ -46,6 +45,21 @@ class Usuario extends Conexao
             return $msg;
         
          } catch (\Exception $e) {
+             $msg = 'Erro ao excluir o usuario '.$nome.'!';
+             return $msg;
+         }
+     }
+
+     public function edit($id){
+        try {
+            $this->conn = $this->connect();
+            $sql = "SELECT * FROM usuario WHERE id = $id";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute();
+            $result = $stmt->fetch();
+            return $result;
+         } catch (\Exception $e) {
+             echo $e;
          }
      }
 
