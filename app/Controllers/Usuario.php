@@ -22,8 +22,9 @@ class Usuario
             $addUser = new \App\Models\Usuario();
             $retorno = $addUser->add($this->dados);
             if ($retorno){
-                $urlDestino = URL . "home/index";
-                header("Location: $urlDestino");
+                echo("<script>alert('Usuario ".$retorno." foi cadastrado com sucesso!');
+                window.location.href='/usuario/add';
+                </script>");
             } else {
                 echo("<script>alert('Erro ao cadastrar usuário!')</script>");
             }

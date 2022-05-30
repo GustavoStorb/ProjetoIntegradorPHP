@@ -29,7 +29,7 @@ class Usuario extends Conexao
         $stmt->bindParam(":perfil", $this->dados['perfil'], \PDO::PARAM_STR);
         $stmt->bindParam(":licensed", $this->dados['licensed'], \PDO::PARAM_STR);
         $stmt->execute();
-        return true;
+        return $this->dados['nome'];
         } catch (\Exception $e){
         return false;
         }
