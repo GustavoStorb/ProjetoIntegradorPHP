@@ -50,7 +50,7 @@ class Usuario extends Conexao
          }
      }
 
-     public function edit($id){
+     public function selectByID($id){
         try {
             $this->conn = $this->connect();
             $sql = "SELECT * FROM usuario WHERE id = $id";

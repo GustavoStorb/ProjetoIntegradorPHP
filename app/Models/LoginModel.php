@@ -24,9 +24,7 @@ class LoginModel extends Conexao
     public function login(array $dados = null) {
         $this->dados = $dados;
         $this->conn = $this->connect();
-        $query_val_login = "SELECT id, nome, email, senha, perfil, licensed
-                FROM usuario
-                WHERE email =:email LIMIT 1";
+        $query_val_login = "SELECT id, nome, email, senha, perfil, licensed FROM usuario WHERE email =:email LIMIT 1";
         $result_val_login = $this->conn->prepare($query_val_login);
         $result_val_login->bindParam(":email", $this->dados['usuario'], \PDO::PARAM_STR);
         $result_val_login->execute();

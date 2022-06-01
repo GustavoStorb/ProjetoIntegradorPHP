@@ -1,8 +1,17 @@
 <?php include('./app/Layouts/header.php'); ?>
 <?php 
 if (isset($_GET['id'])){
-   echo $_GET['id'];
+   
+   $selectByID = new \App\Models\Usuario();
+   $retorno = $selectByID->selectByID($_GET['id']);
+   $id = $retorno[0];
+   $nome = $retorno[1];
+   $email = $retorno[2];
+   $tipo = $retorno[4];
+   $licensed = $retorno[5];
+
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +32,7 @@ if (isset($_GET['id'])){
                      placeholder="nome"
                      name="nome" 
                      autocomplete="off" 
-                     value=""
+                     value="<?php echo $nome; ?>"
                      required />
                   <label for="nome" class="form__label blue">Nome</label>
                </div>
@@ -35,7 +44,7 @@ if (isset($_GET['id'])){
                      placeholder="email"
                      name="email" 
                      autocomplete="off" 
-                     value="" 
+                     value="<?php echo $email; ?>" 
                      required />
                   <label for="email" class="form__label blue">E-mail</label>
                </div>
@@ -54,18 +63,18 @@ if (isset($_GET['id'])){
                <label style="font-size: 1.3rem;" class="blue">Cargo</label>
                <div class="input-field">
                   <select name="perfil" required>
-                     <option value="" disabled selected>Escolher</option>
-                     <option value="adm">Administrador</option>
-                     <option value="user">Funcionário</option>
+                    <option value="" disabled>Escolha</option>
+                    <option value="adm" <?php if($tipo == 'adm'){?> selected <?php } ?>>Administrador</option>
+                    <option value="user" <?php if($tipo == 'user'){?> selected <?php } ?>>Funcionário</option>
                   </select>
                </div>
                <hr>
                <label style="font-size: 1.3rem;" class="blue">Habilitado</label>
                <div class="input-field col s12">
                   <select name="licensed">
-                     <option value="" disabled selected>Escolher</option>
-                     <option value="1">Sim</option>
-                     <option value="0">Não</option>
+                    <option value="" disabled>Escolha</option>
+                    <option value="1" <?php if($licensed == '1'){?> selected <?php } ?>>Sim</option>
+                    <option value="0" <?php if($licensed == '0'){?> selected <?php } ?>>Não</option>
                   </select>
                </div>
             </fieldset>

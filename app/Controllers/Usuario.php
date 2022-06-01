@@ -46,11 +46,7 @@ class Usuario
 
     public function edit(){
         if (isset($_GET['id'])){
-            $editUser = new \App\Models\Usuario();
-            $retorno = $editUser->edit($_GET['id']);
-            $this->retorno = $retorno;
-            var_dump($this->retorno);
-            $carregarView = new \Core\ConfigView("Views/usuario/editar", $this->retorno);
+            $carregarView = new \Core\ConfigView("Views/usuario/editar", $retorno);
             $carregarView->renderizar();
         }
     }
@@ -71,9 +67,6 @@ class Usuario
                     if (confirm("Você realmente gostaria de excluir este usuario?")){
                         document.location = '/usuario/find/delete?id=' + id + '&nome=' + nome;
                     }
-                }
-                function editUser(id){
-                        document.location = '/usuario/find/edit?id=' + id;
                 }
             </script>
             <div style="overflow-x:auto;" >
@@ -123,7 +116,7 @@ class Usuario
                     </td>
                     <td>
                         <div class="btnFind" >
-                        <button onclick="editUser(<?php echo $valor[0];?>);" class="table-action-button bg-blue "><i style="color: white; font-size: 18px;" class="fa fa-pencil"></i>
+                        <button onclick="document.location = '/usuario/find/edit?id=' + <?php echo $valor[0];?>;" class="table-action-button bg-blue "><i style="color: white; font-size: 18px;" class="fa fa-pencil"></i>
                         <button onclick="deleteUser(<?php echo $valor[0];?>, '<?php echo $valor[1];?>');" class="table-action-button bg-red"><i style="color: white; font-size:18px;" class="fa fa-trash"></i>
                         </div>
                     </td>
