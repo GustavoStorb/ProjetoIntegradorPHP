@@ -21,7 +21,7 @@ if (isset($_GET['id'])){
          <form class="cadastro-form" method="POST">
             <fieldset>
                <legend>
-                  <img src="/../public/user.png" width="150">
+                  <img src="/../public/edit.png" width="150">
                </legend>
                <h2 class="cadastro">Editar Usuário</h2>
                <div class="form__group field">
@@ -79,7 +79,7 @@ if (isset($_GET['id'])){
                </div>
             </fieldset>
             <div class="btnCadastro">   
-               <button name="SendCadastro" class="btn-cadastro active bg-blue br-6" type="submit">
+               <button name="btnSaveUser" class="btn-cadastro active bg-blue br-6" type="submit">
                   SALVAR
                </button>  
                <button onclick="location.href='/usuario/find'" class="btn-cadastro active bg-red br-6">
