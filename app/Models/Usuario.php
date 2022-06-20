@@ -63,17 +63,61 @@ class Usuario extends Conexao
          }
      }
 
+     public function findAllHabilitados(){
+        try {
+            $this->conn = $this->connect();
+
+            $sql = "SELECT * FROM usuario WHERE licensed = '1' AND perfil = 'user' ORDER BY nome";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute();
+            return $stmt->fetchAll();
+         } catch (\Exception $e) {
+           //echo $e;
+         }
+     }
+
      public function find(array $dados = null){
         try {
+
             $this->dados = $dados;
             $this->conn = $this->connect();
-            $sql = "SELECT * FROM usuario WHERE nome LIKE '".$this->dados['nome']."%' ORDER BY nome";
+            
+            $nome = $this->dados['nome'].'%';
+            $sql = "SELECT * FROM usuario WHERE nome LIKE :nome ORDER BY nome";
             $stmt = $this->conn->prepare($sql);
+            $stmt->bindParam(":nome", $nome, \PDO::PARAM_STR);
             $stmt->execute();
             $result = $stmt->fetchAll();
             return $result;
         } catch (\Exception $e){
-            echo $e;
+            return $e->getMessage();
+        }
+     }
+
+     public function edit(array $dados = null){
+        try {
+            $this->dados = $dados;
+            $this->conn = $this->connect();
+
+            $sql = "UPDATE usuario SET nome=:nome, email=:email, senha=:senha, perfil=:perfil, licensed=:licensed WHERE id=:id";
+            if($this->dados['senha'] == ''){
+                $sql = "UPDATE usuario SET nome=:nome, email=:email, perfil=:perfil, licensed=:licensed WHERE id=:id";
+            }
+
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindParam(':id', $this->dados['userId'], PDO::PARAM_INT);
+            $stmt->bindParam(":nome", $this->dados['nome'], \PDO::PARAM_STR);
+            $stmt->bindParam(":email", $this->dados['email'], \PDO::PARAM_STR);
+            if($this->dados['senha'] != ''){
+                $stmt->bindParam(":senha", password_hash($this->dados['senha'], PASSWORD_DEFAULT), \PDO::PARAM_STR);
+            }
+            $stmt->bindParam(":perfil", $this->dados['perfil'], \PDO::PARAM_STR);
+            $stmt->bindParam(":licensed", $this->dados['licensed'], \PDO::PARAM_STR);
+            if($stmt->execute()){
+                return true;
+            }
+        } catch (\Exception $e){
+            //echo $e;
         }
      }
 }

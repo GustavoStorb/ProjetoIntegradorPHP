@@ -24,6 +24,7 @@ if (isset($_GET['id'])){
                   <img src="/../public/edit.png" width="150">
                </legend>
                <h2 class="cadastro">Editar Usuário</h2>
+               <input type="hidden" name="userId" value="<?php echo $_GET['id']; ?>">
                <div class="form__group field">
                   <input
                      id="nome"
@@ -53,11 +54,11 @@ if (isset($_GET['id'])){
                      id="senha"
                      type="password" 
                      class="form__field" 
-                     placeholder="email"
+                     placeholder="senha"
                      name="senha" 
                      autocomplete="off" 
                      value="" 
-                     required />
+                      />
                   <label for="senha" class="form__label blue">Senha</label>
                </div>
                <label style="font-size: 1.3rem;" class="blue">Cargo</label>
@@ -82,7 +83,7 @@ if (isset($_GET['id'])){
                <button name="btnSaveUser" class="btn-cadastro active bg-blue br-6" type="submit">
                   SALVAR
                </button>  
-               <button onclick="location.href='/usuario/find'" class="btn-cadastro active bg-red br-6">
+               <button onclick="document.location='/usuario/find'" type="button" class="btn-cadastro active bg-red br-6">
                   VOLTAR
                </button>  
             </div>

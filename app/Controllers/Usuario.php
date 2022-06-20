@@ -45,9 +45,21 @@ class Usuario
     }
 
     public function edit(){
-        if (isset($_GET['id'])){
+        $this->dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+        if (isset($_GET['id']) && "" == trim($_POST['nome'])){
+            $carregarView = new \Core\ConfigView("Views/usuario/editar", $retorno);
+            return $carregarView->renderizar();
+        }
+        
+        
+        if (!empty($this->dados['userId'])){
+            $userModel = new \App\Models\Usuario();
+            $editReturn = $userModel->edit($this->dados);
             $carregarView = new \Core\ConfigView("Views/usuario/editar", $retorno);
             $carregarView->renderizar();
+            if($editReturn){
+                echo "<script>alert('Informações alteradas com sucesso!')</script>";
+            }
         }
     }
 
@@ -116,7 +128,7 @@ class Usuario
                     </td>
                     <td>
                         <div class="btnFind" >
-                        <button onclick="document.location = '/usuario/find/edit?id=' + <?php echo $valor[0];?>;" class="table-action-button bg-blue "><i style="color: white; font-size: 18px;" class="fa fa-pencil"></i>
+                        <button onclick="document.location = '/usuario/edit?id=' + <?php echo $valor[0];?>;" class="table-action-button bg-blue "><i style="color: white; font-size: 18px;" class="fa fa-pencil"></i>
                         <button onclick="deleteUser(<?php echo $valor[0];?>, '<?php echo $valor[1];?>');" class="table-action-button bg-red"><i style="color: white; font-size:18px;" class="fa fa-trash"></i>
                         </div>
                     </td>

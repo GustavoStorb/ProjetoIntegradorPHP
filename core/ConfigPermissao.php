@@ -30,7 +30,7 @@ class ConfigPermissao
     }
     
     private function pgRestrita(): void {
-        $this->pgRestrita = ["home", "usuario", "add", "find"];
+        $this->pgRestrita = ["home", "usuario", "add", "find", 'veiculo', 'chamado'];
         
         if(in_array($this->urlController, $this->pgRestrita)){
             $this->verificarLogin();

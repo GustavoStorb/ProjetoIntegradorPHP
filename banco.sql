@@ -1,3 +1,4 @@
+USE crud;
 
 DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE IF NOT EXISTS usuario(
@@ -7,6 +8,25 @@ CREATE TABLE IF NOT EXISTS usuario(
 	senha char(220) not null,
 	perfil enum('adm', 'user') not null,
 	licensed boolean not null
+);
+
+DROP TABLE IF EXISTS `chamado`;
+CREATE TABLE IF NOT EXISTS chamado(
+    id int primary key auto_increment,
+    endereco varchar(255) not null,
+    tempo varchar(220) not null,
+    km int not null,
+    funcionario_id int not null,
+    veiculo_id int not null,
+    data date not null
+);
+
+DROP TABLE IF EXISTS `veiculo`;
+CREATE TABLE IF NOT EXISTS veiculo(
+    id int primary key auto_increment not null,
+    tipo varchar(50) not null,
+    ano int(4) not null,
+    consumo decimal(30,1) not null
 );
 
 INSERT INTO USUARIO values(null, 'Gustavo', 'gustavo@gmail.com', '$2y$10$VywIVAane04e4.YjMlhgTOL687XtubBfax50hVgqYbfh.GQi0zwHK', 'adm', 1);
