@@ -94,8 +94,6 @@ class Chamado
                         <th>Endereço</th>
                         <th>Tempo</th>
                         <th>Distancia</th>
-                        <th>Funcionario ID</th>
-                        <th>Veiculo ID</th>
                         <th>Data</th>
                         <th>Ações</th>
                     <?php foreach($result as &$valor): ?>
@@ -109,19 +107,13 @@ class Chamado
                         <?php echo $valor[1];?>
                     </td>
                     <td>
-                        <?php echo $valor[2]?>
+                        <?php echo $valor[2]; ?>
                     </td>
                     <td>
-                        <?php echo $valor[3]?>
+                        <?php echo $valor[3]; echo "Km";?>
                     </td>
                     <td>
-                        <?php echo $valor[4]?>
-                    </td>
-                    <td>
-                        <?php echo $valor[5]?>
-                    </td>
-                    <td>
-                        <?php echo $valor[6]?>
+                        <?php echo $valor[6];?>
                     </td>
                     <td>
                         <div class="btnFind" >

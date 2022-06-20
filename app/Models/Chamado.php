@@ -30,7 +30,7 @@ class Chamado extends Conexao
         $stmt->bindParam(":veiculoId", $this->dados['veiculoId'], \PDO::PARAM_INT);
         $stmt->bindParam(":data", $this->dados['data'], \PDO::PARAM_STR);
         $stmt->execute();
-        return 'Chamado adicionado com sucesso!';
+        return 'Chamado criado com sucesso!';
         } catch (\Exception $e){
         return $e->getMessage();
         }
