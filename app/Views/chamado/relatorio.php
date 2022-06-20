@@ -73,7 +73,7 @@ if(isset($_GET['ids'])){
              <div class="text-center font-white font-10">
                 <h1 class="font-40" style="margin-bottom: 45px;">Relatorio do Chamado</h1>
                 <?php if(isset($_GET['id'])){ ?>
-                  <h1>N° do chamado: <?php echo $numeroChamado; ?></h1>
+                  <h1>ID do Chamado: <?php echo $numeroChamado; ?></h1>
                 <?php } ?>
                 <?php if(isset($_GET['ids'])){ ?>
                   <h1>N° de chamados: <?php echo $numeroChamado; ?></h1>
@@ -88,9 +88,9 @@ if(isset($_GET['ids'])){
                   <h1>Data do chamado: <?php echo $minDate." até ".$maxDate; ?></h1>
                   <h1>Distancia total: <?php echo number_format($distanciaTotal, 2); ?> km</h1>
                   <h1>Media de distancia: <?php echo number_format(($distanciaTotal / count($ids)), 2); ?> km</h1>
-                  <h1>Media de co2: <?php echo number_format(($totalCo2 / count($ids)), 2); ?></h1>
+                  <h1>Media de CO²: <?php echo number_format(($totalCo2 / count($ids)), 2); ?></h1>
                 <?php } ?>
-                <h1>Total de co2 utilizado: <?php echo number_format($totalCo2, 2); ?></h1>
+                <h1>Total de CO²: <?php echo number_format($totalCo2, 2); ?></h1>
                 <button onclick="location.href = '/chamado/find'" class="btn-cadastro active bg-red br-6">
                      VOLTAR
                   </button>

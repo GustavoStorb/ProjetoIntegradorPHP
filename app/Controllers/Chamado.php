@@ -94,6 +94,8 @@ class Chamado
                         <th>Endereço</th>
                         <th>Tempo</th>
                         <th>Distancia</th>
+                        <th>Funcionario</th>
+                        <th>Veiculo</th>
                         <th>Data</th>
                         <th>Ações</th>
                     <?php foreach($result as &$valor): ?>
@@ -111,6 +113,12 @@ class Chamado
                     </td>
                     <td>
                         <?php echo $valor[3]; echo "Km";?>
+                    </td>
+                    <td>
+                        <?php echo $valor[4]?>
+                    </td>
+                    <td>
+                        <?php echo $valor[5]?>
                     </td>
                     <td>
                         <?php echo $valor[6];?>
@@ -159,7 +167,7 @@ class Chamado
             </html>
             <?php
             }else{
-                $carregarView = new \Core\ConfigView("Views/usuario/consultar", $this->dados);
+                $carregarView = new \Core\ConfigView("Views/chamado/consultar", $this->dados);
                 $carregarView->renderizar();
                 echo("<script>alert('Erro ao buscar esse usuário!')</script>");
             }
