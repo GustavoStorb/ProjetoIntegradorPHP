@@ -10,9 +10,9 @@ if(!defined('2022T2')){
 class Conexao
 {
     private $sgbd = "mysql";
-    private $host = "localhost";
-    private $user = "root";
-    private $pass = "";
+    private $host = "projetointegrador.ce3xc1zrsuqt.us-east-1.rds.amazonaws.com";
+    private $user = "main";
+    private $pass = "crud-password";
     private $database = "crud";
     public $port = 3306;
     public $connect;

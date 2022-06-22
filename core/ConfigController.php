@@ -54,7 +54,7 @@ class ConfigController
     }
     
     private function config() {
-        define('URL', 'http://localhost/');
+        define('URL', 'http://44.207.0.123/');
     }
 
 }
