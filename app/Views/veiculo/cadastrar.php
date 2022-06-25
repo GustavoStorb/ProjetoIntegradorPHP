@@ -30,6 +30,7 @@
                      name="ano" 
                      autocomplete="off" 
                      value="" 
+                     maxlength="4"
                      required />
                   <label for="ano" class="form__label blue">Ano</label>
                </div>
