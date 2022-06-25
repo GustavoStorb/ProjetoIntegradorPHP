@@ -8,7 +8,7 @@
          <form class="cadastro-form" method="POST">
             <h2 class="cadastro">Consulta de Veiculo</h2>
             <div class="form__group field find-user-form">
-               <div style="margin-left: -7.8rem;">
+               <div class="divconsulta" style="margin-left: -7.8rem;">
                   <input
                      id="tipo"
                      type="input" 
