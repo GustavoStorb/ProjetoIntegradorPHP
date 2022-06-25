@@ -39,6 +39,8 @@ $veiculos = $vehicleModel->findAll();
                      name="tempo" 
                      autocomplete="off" 
                      value="" 
+                     min="00:01"
+                     max="24:00"
                      required />
                   <label for="tempo" class="form__label blue">Tempo</label>
                </div>
@@ -51,7 +53,7 @@ $veiculos = $vehicleModel->findAll();
                      name="distancia" 
                      autocomplete="off" 
                      value="" 
-                     min="0"
+                     min="1"
                      maxlength="4"
                      required />
                   <label for="distancia" class="form__label blue">Distancia</label>
@@ -64,6 +66,7 @@ $veiculos = $vehicleModel->findAll();
                      placeholder="email"
                      name="data" 
                      autocomplete="off" 
+                     max="<?= date('Y-m-d'); ?>"
                      value="" 
                      required />
                   <label for="data" class="form__label blue">Data</label>
@@ -86,7 +89,7 @@ $veiculos = $vehicleModel->findAll();
                      <option value="" disabled selected>Escolher</option>
                         <?php
                             foreach($veiculos as &$vehicle){
-                                echo '<option value="'.$vehicle['id'].'">'.$vehicle['tipo'].'</option>';
+                                echo '<option value="'.$vehicle['id'].'">'.$vehicle['tipo'].'('.$vehicle['ano'].')</option>';
                             }
                         ?>
                   </select>
