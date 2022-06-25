@@ -8,7 +8,7 @@
          <form class="cadastro-form" method="POST">
             <h2 class="cadastro">Consulta de Veiculo</h2>
             <div class="form__group field find-user-form">
-               <div>
+               <div style="margin-left: -7.8rem;">
                   <input
                      id="tipo"
                      type="input" 
@@ -20,7 +20,7 @@
                      style="width: 65%; font-weight: 500;"
                      required
                      />
-                  <label for="tipo" class="form__label blue margin-160" style="top: 35px;">Digite um tipo para pesquisar</label>
+                  <label for="tipo" class="form__label blue margin-160" style="top: 35px; ">Digite um tipo para pesquisar</label>
                </div>
                <div class="btnCadastro">   
                   <button class="active bg-blue br-6 btn-cadastro" type="submit">

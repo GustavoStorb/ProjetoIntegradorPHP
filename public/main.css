@@ -357,7 +357,6 @@ form.login-form {
 }
 
 .find-user-form {
-  margin-left: -7.8rem;
   justify-content: center;
 }
 
@@ -544,9 +543,6 @@ fieldset {
 /* RESPONSIVIDADE */
 
 @media screen and (max-width: 700px) {
-  .btn-cadastro.bg-red {
-    margin-top: 10px;
-  }
   .find-user-form {
     flex-direction: column;
     margin-left: 0;
@@ -649,6 +645,6 @@ fieldset {
     margin: 0px;
   }
   .form__label {
-    top: 25px !important;
+    top: -5px !important;
   }
 }

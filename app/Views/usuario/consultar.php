@@ -8,7 +8,7 @@
          <form class="cadastro-form" method="POST">
             <h2 class="cadastro">Consulta de Usuário</h2>
             <div class="form__group field find-user-form">
-               <div>
+               <div style="margin-left: -7.8rem;">
                   <input
                      id="nome"
                      type="input" 
