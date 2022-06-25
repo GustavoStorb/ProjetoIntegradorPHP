@@ -8,7 +8,7 @@
          <form class="cadastro-form" method="POST">
             <fieldset>
                <legend>
-                  <img src="../public/user.png" width="150">
+                  <img src="../public/veiculo.png" width="150">
                </legend>
                <h2 class="cadastro">Cadastro de Veiculo</h2>
                <label style="font-size: 1.3rem;" class="blue">Tipo</label>

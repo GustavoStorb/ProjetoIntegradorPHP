@@ -15,7 +15,7 @@ $veiculos = $vehicleModel->findAll();
          <form class="cadastro-form" method="POST">
             <fieldset>
                <legend>
-                  <img src="../public/user.png" width="150">
+                  <img src="../public/chamado.png" width="150">
                </legend>
                <h2 class="cadastro">Cadastro de Chamado</h2>
                <div class="form__group field">
