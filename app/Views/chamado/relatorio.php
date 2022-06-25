@@ -91,11 +91,16 @@ if(isset($_GET['ids'])){
                   <h1>Media de CO²: <?php echo number_format(($totalCo2 / count($ids)), 2); ?></h1>
                 <?php } ?>
                 <h1>Total de CO²: <?php echo number_format($totalCo2, 2); ?></h1>
-                <button onclick="location.href = '/chamado/find'" class="btn-cadastro active bg-red br-6">
+                <button type="button" onclick="goBack()" class="btn-cadastro active bg-red br-6">
                      VOLTAR
                   </button>
             </div>
          </form>
       </div>
    </body>
+   <script>
+      function goBack(){
+         window.location.href = '/chamado/find';
+      }
+   </script>
 </html>

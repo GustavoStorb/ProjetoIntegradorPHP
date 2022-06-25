@@ -54,7 +54,7 @@ class ConfigController
     }
     
     private function config() {
-        define('URL', 'http://44.207.0.123/');
+        define('URL', 'http://ec2-44-201-114-48.compute-1.amazonaws.com/');
     }
 
 }

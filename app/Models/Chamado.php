@@ -54,9 +54,9 @@ class Chamado extends Conexao
             $this->conn = $this->connect();
 
             $endereco = $this->dados['endereco'].'%';
-            $sql = "SELECT * FROM chamado WHERE endereco LIKE :endereco ORDER BY endereco";
+            $sql = "SELECT * FROM chamado ORDER BY endereco";
             $stmt = $this->conn->prepare($sql);
-            $stmt->bindParam(":endereco", $endereco, \PDO::PARAM_STR);
+            // $stmt->bindParam(":endereco", $endereco, \PDO::PARAM_STR);
             $stmt->execute();
             $result = $stmt->fetchAll();
             return $result;
