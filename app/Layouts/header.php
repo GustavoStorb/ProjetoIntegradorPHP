@@ -19,7 +19,14 @@ if(!defined('2022T2')){
             <?php if(!isset($_SESSION['perfil'])){ ?>
                 <a class="active br-10" href="login">Acesso</a>
             <?php }else{ ?>
-                <a class="active bg-red br-10" href="/sair/index">Sair</a>
+                <button onClick='confirmaSair()' style="background-color: #272833; border: none; cursor: pointer;" ><a class="active bg-red br-10">Sair</a></button>
+                <script>
+                function confirmaSair(){
+                    if (confirm("Você realmente gostaria de sair?")){
+                        document.location = '/sair/index';
+                    }
+                }
+            </script>
             <?php } ?>
         </div>
         </nav>
