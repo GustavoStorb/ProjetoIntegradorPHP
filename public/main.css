@@ -557,10 +557,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     margin-left: 0;
   }
 
-  .btn-cadastro.bg-red {
-    margin-top: 0px;
-  }
-
   .divconsulta {
     margin-left: 0 !important;
   }
