@@ -51,6 +51,8 @@ $veiculos = $vehicleModel->findAll();
                      name="distancia" 
                      autocomplete="off" 
                      value="" 
+                     min="0"
+                     maxlength="4"
                      required />
                   <label for="distancia" class="form__label blue">Distancia</label>
                </div>

@@ -25,11 +25,13 @@
                <div class="form__group field">
                   <input
                      id="ano"
-                     type="input" 
+                     type="number" 
                      class="form__field"
                      name="ano" 
                      autocomplete="off" 
                      value="" 
+                     min="1956"
+                     max="2022"
                      maxlength="4"
                      required />
                   <label for="ano" class="form__label blue">Ano</label>
@@ -51,7 +53,7 @@
                <button name="SendCadastro" class="btn-cadastro active bg-blue br-6" type="submit">
                   CADASTRAR
                </button>  
-               <button onclick="location.href='/home/index'" class="btn-cadastro active bg-red br-6">
+               <button type="button" onclick="location.href='/home/index'" class="btn-cadastro active bg-red br-6">
                   VOLTAR
                </button>  
             </div>

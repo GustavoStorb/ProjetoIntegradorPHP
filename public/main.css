@@ -540,6 +540,14 @@ fieldset {
   background-color: #0af05c;
 }
 
+input[type="time"]::-webkit-calendar-picker-indicator {
+  background: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  background: none;
+}
+
 /* RESPONSIVIDADE */
 
 @media screen and (max-width: 700px) {
