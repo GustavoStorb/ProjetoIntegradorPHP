@@ -107,7 +107,7 @@ $veiculos = $vehicleModel->findAll();
                <button name="SendCadastro" class="btn-cadastro active bg-blue br-6" type="submit">
                   SALVAR
                </button>  
-               <button type="button" onclick="location.href='/home/index'" class="btn-cadastro active bg-red br-6">
+               <button type="button" onclick="location.href='/chamado/find'" class="btn-cadastro active bg-red br-6">
                   VOLTAR
                </button>  
             </div>
