@@ -28,7 +28,7 @@ $result = $chamadoModel->find($this->dados);
                   <label for="endereco" class="form__label blue margin-160" style="top: 35px;">Digite um endereco para pesquisar</label>
                </div> -->
                <div class="btnCadastro"> 
-               <button type="button" onclick="location.href='/home/index'" class="btn-cadastro active bg-red br-6">
+               <button type="button" onclick="location.href='/home/index'" style="margin-top: 10px;" class="btn-cadastro active bg-red br-6">
                      VOLTAR
                   </button>  
                   <button class="active gerar-relatorio font-black bg-green br-6 btn-cadastro" style="display: block;" type="button">
