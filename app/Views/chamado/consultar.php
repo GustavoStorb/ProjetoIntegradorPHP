@@ -31,7 +31,7 @@ $result = $chamadoModel->find($this->dados);
                   <button onclick="location.href='/home/index'" class="btn-cadastro active bg-red br-6">
                      VOLTAR
                   </button>
-                  <button class="active gerar-relatorio font-black bg-green br-6 btn-cadastro" type="button">
+                  <button class="active gerar-relatorio font-black bg-green br-6 btn-cadastro" style="display: block;" type="button">
                      GERAR RELATORIOS
                   </button> 
                </div>
