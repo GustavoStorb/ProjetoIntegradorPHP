@@ -24,6 +24,7 @@ input {
 
 .gerar-relatorio {
   display: none;
+  float: left;
 }
 
 .ml-9 {

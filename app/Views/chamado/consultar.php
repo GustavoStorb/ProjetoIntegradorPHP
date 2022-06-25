@@ -32,7 +32,7 @@ $result = $chamadoModel->find($this->dados);
                      VOLTAR
                   </button>
                   <button class="active gerar-relatorio font-black bg-green br-6 btn-cadastro" type="button">
-                     GERAR RELATORIO
+                     GERAR RELATORIOS
                   </button> 
                </div>
             </div>
