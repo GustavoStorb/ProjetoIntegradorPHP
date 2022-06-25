@@ -76,7 +76,7 @@ if(isset($_GET['ids'])){
                   <h1>ID do Chamado: <?php echo $numeroChamado; ?></h1>
                 <?php } ?>
                 <?php if(isset($_GET['ids'])){ ?>
-                  <h1>N° de chamados: <?php echo $numeroChamado; ?></h1>
+                  <h1>Quantidade de chamados: <?php echo $numeroChamado; ?></h1>
                 <?php } ?>
                 <?php if(isset($_GET['id'])){ ?>
                   <h1>Data do chamado: <?php echo $datas; ?></h1>
