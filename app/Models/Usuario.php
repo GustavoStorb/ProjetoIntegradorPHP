@@ -83,9 +83,10 @@ class Usuario extends Conexao
             $this->conn = $this->connect();
             
             $nome = $this->dados['nome'].'%';
-            $sql = "SELECT * FROM usuario WHERE nome LIKE :nome ORDER BY nome";
+            $sql = "SELECT * FROM usuario WHERE nome LIKE :nome AND id != :id ORDER BY nome";
             $stmt = $this->conn->prepare($sql);
             $stmt->bindParam(":nome", $nome, \PDO::PARAM_STR);
+            $stmt->bindParam(":id", $this->dados['atualUserId'], \PDO::PARAM_STR);
             $stmt->execute();
             $result = $stmt->fetchAll();
             return $result;

@@ -9,6 +9,7 @@
             <h2 class="cadastro">Consulta de Usuário</h2>
             <div class="form__group field find-user-form">
                <div class="divconsulta" style="margin-left: -7.8rem;">
+               
                   <input
                      id="nome"
                      type="input" 
@@ -20,6 +21,7 @@
                      style="width: 65%; font-weight: 500;"
                      required
                      />
+                     <input type="hidden" name="atualUserId" value="<?php echo $_SESSION['usuario_id']; ?>">
                   <label for="nome" class="form__label blue margin-160" style="top: 35px;">Digite para pesquisar</label>
                </div>
                <div class="btnCadastro">   
