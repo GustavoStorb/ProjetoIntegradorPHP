@@ -21,7 +21,7 @@ if(!defined('2022T2')){
    <div class="actions-dashboard-buttons">
       <h1 class="text-center">AÇÕES</h1>
       <div class="actions-buttons-table">
-         <a href="/chamado/add">   
+         <a href="/chamado/add"> 
             <button class="mr-16 action">Cadastrar Chamado</button>
          </a>
          <a href="/chamado/find">
@@ -38,7 +38,21 @@ if(!defined('2022T2')){
       </div>
       <div class="actions-buttons-table">
          <a href="/usuario/add">
-            <button class="action">Cadastrar Usuário</button>
+    <?php
+    if($_SESSION['perfil'] === 'user') {
+    ?>
+        <button hidden="hidden" class="action">Cadastrar Usuário</button>
+    <?php
+    }
+    ?>
+    <?php
+    if($_SESSION['perfil'] === 'adm') {
+    ?>
+        <button class="action">Cadastrar Usuário</button>
+    <?php
+    }
+    ?>
+    
          </a>
          <a href="/usuario/find">
             <button class="action">Consultar Usuário</button>
