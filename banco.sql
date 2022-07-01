@@ -41,3 +41,15 @@ INSERT INTO usuario values(null, 'Enzo', 'enzo@gmail.com', '$2y$10$VywIVAane04e4
 INSERT INTO usuario values(null, 'Cosme', 'cosme@gmail.com', '$2y$10$LjNt97W5VIu/fXDlGZJJc.i4HdHUeLwcnK/s0OoqvvIoQ3bn476Nu', 'user', 1);
 INSERT INTO usuario values(null, 'Sandra', 'sandra@gmail.com', '$2y$10$VywIVAane04e4.YjMlhgTOL687XtubBfax50hVgqYbfh.GQi0zwHK', 'adm', 0);
 INSERT INTO usuario values(null, 'Douglas', 'douglas@gmail.com', '$2y$10$LjNt97W5VIu/fXDlGZJJc.i4HdHUeLwcnK/s0OoqvvIoQ3bn476Nu', 'user', 1);
+
+
+INSERT INTO veiculo values(null, "strada", 2018, 9.1);
+INSERT INTO veiculo values(null, "fiorino", 2016, 8.3);
+INSERT INTO veiculo values(null, "logan", 2021, 9.8);
+INSERT INTO veiculo values(null, "uno", 2015, 9.1);
+INSERT INTO veiculo values(null, "palio", 2020, 10.1);
+INSERT INTO veiculo values(null, "strada", 2013, 9.1);
+INSERT INTO veiculo values(null, "fiorino", 2014, 8.3);
+INSERT INTO veiculo values(null, "logan", 2022, 9.8);
+
+
