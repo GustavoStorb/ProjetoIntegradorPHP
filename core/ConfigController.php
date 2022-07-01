@@ -54,7 +54,7 @@ class ConfigController
     }
     
     private function config() {
-        define('URL', 'http://ec2-3-85-98-229.compute-1.amazonaws.com/');
+        define('URL', 'http://localhost/');
     }
 
 }
